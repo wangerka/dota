@@ -16,7 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -25,9 +24,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import static android.R.attr.name;
-import static java.lang.System.in;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 
@@ -186,28 +182,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         protected Bitmap doInBackground(String... params) {
             InputStream in=null;
             String name = params[0];
+            String rate="";
+            String counts="";
+            String imgurl="";
             Cursor c = dbHelper.getReadableDatabase().query("hero_info", null, "name=?", new String[]{name}, null, null,null);
             if(c!= null&&c.getCount()>0){
                 c.moveToFirst();
                 int rateIndex = c.getColumnIndex("rate");
                 int countsIndex = c.getColumnIndex("counts");
                 int imgIndex = c.getColumnIndex("img");
-                String rate = c.getString(rateIndex);
-                String img = c.getString(imgIndex);
-                String counts = c.getString(countsIndex);
-
-                Log.i("gejun","img = " + img);
-                in = Net.doUrl("http://content.52pk.com/files/100623/2230_102437_1_lit.jpg");
-                Bitmap bitmap = BitmapFactory.decodeStream(in);
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return bitmap;
-
+                rate = c.getString(rateIndex);
+                imgurl = c.getString(imgIndex);
+                counts = c.getString(countsIndex);
+                c.close();
             }
-            return null;
+
+            return Net.getBitmapByURL(imgurl);
         }
 
         @Override
@@ -219,52 +209,42 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             switch(currentSelect){
                 case R.id.hero1:
                     hero1.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero1.setBackground(bd);
                     hero1.setText(currentName);
                     break;
                 case R.id.hero2:
                     hero2.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero2.setBackground(bd);
                     hero2.setText(currentName);
                     break;
                 case R.id.hero3:
                     hero3.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero3.setBackground(bd);
                     hero3.setText(currentName);
                     break;
                 case R.id.hero4:
                     hero4.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero4.setBackground(bd);
                     hero4.setText(currentName);
                     break;
                 case R.id.hero5:
                     hero5.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero5.setBackground(bd);
                     hero5.setText(currentName);
                     break;
                 case R.id.hero6:
                     hero6.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero6.setBackground(bd);
                     hero6.setText(currentName);
                     break;
                 case R.id.hero7:
                     hero7.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero7.setBackground(bd);
                     hero7.setText(currentName);
                     break;
                 case R.id.hero8:
                     hero8.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero8.setBackground(bd);
                     hero8.setText(currentName);
                     break;
                 case R.id.hero9:
                     hero9.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero9.setBackground(bd);
                     hero9.setText(currentName);
                     break;
                 case R.id.hero10:
                     hero10.setCompoundDrawablesWithIntrinsicBounds(null,(Drawable)bd,null,null);
-                    hero10.setBackground(bd);
                     hero10.setText(currentName);
                     break;
 

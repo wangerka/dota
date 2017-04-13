@@ -1,5 +1,7 @@
 package com.alchemy.prediction;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
@@ -30,20 +32,20 @@ public class Net {
         return html;
     }
 
-    public static InputStream doUrl(String url){
-        InputStream in=null;
+    public static Bitmap getBitmapByURL(String url){
+        Bitmap bitmap=null;
         HttpURLConnection connection=null;
         try {
             URL u = new URL(url);
             connection = (HttpURLConnection) u.openConnection();
-            in = connection.getInputStream();
+            InputStream in = connection.getInputStream();
+            bitmap = BitmapFactory.decodeStream(in);
         } catch (Exception e) {
-            Log.i("gejun","11111"+e.toString());
             e.printStackTrace();
         } finally {
             if(connection != null) connection.disconnect();
         }
-        return in;
+        return bitmap;
     }
 
     public static String readInputStream(InputStream inputStream){
