@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <Button android:id="@+id/update_db" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/update_db" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <Button
+            android:id="@+id/hero1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hero1"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hero2"
+            android:layout_below="@id/hero1"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hero3"
+            android:layout_below="@id/hero2"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hero4"
+            android:layout_below="@id/hero3"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hero5"
+            android:layout_below="@id/hero4"
+            android:drawableTop="@drawable/default_hero"/>
+
+        <Button
+            android:id="@+id/hero6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="hero6"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="hero7"
+            android:layout_below="@id/hero6"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="hero8"
+            android:layout_below="@id/hero7"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="hero9"
+            android:layout_below="@id/hero8"
+            android:drawableTop="@drawable/default_hero"/>
+        <Button
+            android:id="@+id/hero10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="hero10"
+            android:layout_below="@id/hero9"
+            android:drawableTop="@drawable/default_hero"/>
+    </RelativeLayout>
+
+</LinearLayout>

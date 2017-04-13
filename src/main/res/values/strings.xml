@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Prediction</string>
+    <string name="update_db">更新数据库</string>
+</resources>
