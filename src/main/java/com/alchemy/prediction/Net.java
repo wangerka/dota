@@ -30,6 +30,22 @@ public class Net {
         return html;
     }
 
+    public static InputStream doUrl(String url){
+        InputStream in=null;
+        HttpURLConnection connection=null;
+        try {
+            URL u = new URL(url);
+            connection = (HttpURLConnection) u.openConnection();
+            in = connection.getInputStream();
+        } catch (Exception e) {
+            Log.i("gejun","11111"+e.toString());
+            e.printStackTrace();
+        } finally {
+            if(connection != null) connection.disconnect();
+        }
+        return in;
+    }
+
     public static String readInputStream(InputStream inputStream){
         StringBuilder sb = new StringBuilder();
         InputStream is = new BufferedInputStream(inputStream);
