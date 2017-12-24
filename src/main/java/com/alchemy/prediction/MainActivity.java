@@ -25,6 +25,8 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.io.InputStream;
 
+//this is test
+
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     String url = "http://www.dotamax.com/hero/rate/";
